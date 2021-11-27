@@ -1,7 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Button, StyleSheet, TextInput, ToastAndroid, View,Text, ImageBackground, TouchableOpacity } from 'react-native'
+import {  ScrollView,  } from 'react'
+
+
+import Slider from '@react-native-community/slider';
+import { Button, StyleSheet, TextInput,  View,Text,  TouchableOpacity } from 'react-native'
 // import {Geolocation} from '@react-native-community/geolocation';
 
 export const RegisterScreen = ({ navigation }) => {
@@ -24,8 +28,9 @@ export const RegisterScreen = ({ navigation }) => {
     async function submit(){
       const data ={name:name,email:email,phone:phone,password:password}
      console.log(data)
-      //  const register = await axios.post("http://192.168.48.6:8000/signup",data)
-      //  console.log("1234.."+register);
+    //  const register = await axios.post("http://192.168.48.6:8000/signup",data)
+    // const register = await axios.post(" http://127.0.0.1:8000/signup",data)
+    //  console.log("1234.."+register);
      setEmail('');
      setPassword('');
      setName('');
@@ -35,11 +40,19 @@ export const RegisterScreen = ({ navigation }) => {
      navigation.navigate('login')
 
     }
+
+   const playerlist = ()=>{
+    navigation.navigate('playerlist')               
+   }
+
+  
+
     return (
         <>
             
         <View style={styles.container}>
           {/* <ImageBackground   source={require('./assets/native.jpeg')}  style={styles.img}  > */}
+          {/* <ScrollView> */}
              <View>
                <Text style={styles.heading}>Registration form</Text>
              </View>
@@ -65,6 +78,20 @@ export const RegisterScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.button} onPress={submit}>
             <Text>submit</Text>            
              </TouchableOpacity>
+
+            <View style={styles.button}>
+                 <Text onPress={playerlist} >  playerlist </Text>
+            </View>
+               
+             {/* <Slider
+                  style={{width: 200, height: 40}}
+                  minimumValue={0}
+                  maximumValue={1}
+                  minimumTrackTintColor="#FFFFFF"
+                  maximumTrackTintColor="#000000"
+             /> */}
+                     
+              {/* </ScrollView> */}
          </View>
 
 
