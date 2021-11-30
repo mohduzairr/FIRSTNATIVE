@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {View} from 'react-native';
 import { RegisterScreen } from './screen/RegisterScreen';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer,DefaultTheme,DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LoginScreen } from './screen/LoginScreen';
 import { ProfileScreen } from './screen/ProfileScreen';
@@ -15,10 +15,21 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NotificationScreen } from './screen/NotificationScreen';
 import { HomeScreen } from './screen/HomeScreen';
+import { useColorScheme } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'rgb(255, 45, 85)',
+  },
+};
+
+
 
 const SideDrawer = ()=>{
   return(
@@ -69,9 +80,10 @@ const HomeStack =()=>{
 }
 
 const MyStack = () => {
+  const scheme = useColorScheme();
   return (
     <>
-    <NavigationContainer>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
    
         <Tab.Navigator  screenOptions={{ headerShown: false }}>
         <Tab.Screen name="signup" component={SideDrawer} />
