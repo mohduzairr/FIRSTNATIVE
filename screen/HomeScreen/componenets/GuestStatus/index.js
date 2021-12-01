@@ -61,64 +61,61 @@ export const GuestStatus = () => {
        
     }
     return (
-        <View style={{height:600,width:300,backgroundColor:'blue',marginLeft:40,borderRadius:5,marginLeft:0,marginTop:30,display:'flex',}}>
-              <View style={{width:200,display:'flex',justifyContent:'space-between'}}>
-                  <Text style={{fontSize:20}}>Rooms</Text>
-                  <View >
+        <View style={{height:250,width:300,backgroundColor:'blue',marginLeft:40,borderRadius:5,marginLeft:0,marginTop:30,display:'flex',}}>
+              <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
+                  <Text style={{fontSize:20,marginTop:20,marginLeft:10}}>Rooms</Text>
+                  <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
                      <TouchableOpacity onPress={decrement} >
-                   <Text style={{fontSize:50,}}>-</Text>
+                   <Text style={{fontSize:50,marginRight:50,}}>-</Text>
                    </TouchableOpacity>
                    <View>
-                    <Text style={{fontSize:30,}}>{roomdata}</Text>
+                    <Text style={{fontSize:30,marginRight:50,marginTop:10}}>{roomdata}</Text>
                   </View>
                   <View>
                  <TouchableOpacity onPress={increment}>
-                   <Text style={{fontSize:50,}}>+</Text>
+                   <Text style={{fontSize:50,marginBottom:10,marginRight:30}}>+</Text>
                    </TouchableOpacity> 
                  </View>
                   </View>
-
-
               </View>
-              <View style={{width:200,display:'flex',justifyContent:'space-between'}}>
-                  <Text style={{fontSize:20}}>Adults</Text>
-                  <View >
+
+              <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
+                  <Text style={{fontSize:20,marginTop:20,marginLeft:10}}>Adults</Text>
+                  <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}} >
                      <TouchableOpacity onPress={adultdecrement} >
-                   <Text style={{fontSize:50,}}>-</Text>
+                   <Text style={{fontSize:50,marginRight:50,}}>-</Text>
                    </TouchableOpacity>
                    <View>
-                    <Text style={{fontSize:30,}}>{adultdata}</Text>
+                    <Text style={{fontSize:30,marginRight:50,marginTop:10}}>{adultdata}</Text>
                   </View>
                   <View>
                  <TouchableOpacity onPress={adultincrement}>
-                   <Text style={{fontSize:50,}}>+</Text>
+                   <Text style={{fontSize:50,marginBottom:10,marginRight:30}}>+</Text>
                    </TouchableOpacity> 
                  </View>
                   </View>
               </View>
 
-              <View style={{width:200,display:'flex',justifyContent:'space-between'}}>
-                  <Text style={{fontSize:20}}>Children</Text>
-                  <View >
+              <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
+                  <Text style={{fontSize:20,marginTop:20,marginLeft:10}}>Children</Text>
+                  <View style={{display:'flex',justifyContent:'space-between',flexDirection:'row'}}>
                      <TouchableOpacity onPress={childdecrement} >
-                   <Text style={{fontSize:50,}}>-</Text>
+                   <Text style={{fontSize:50,marginRight:50,}}>-</Text>
                    </TouchableOpacity>
                    <View>
-                    <Text style={{fontSize:30,}}>{childdata}</Text>
+                    <Text style={{fontSize:30,marginRight:50,marginTop:10}}>{childdata}</Text>
                   </View>
                   <View>
                  <TouchableOpacity onPress={childincrement}>
-                   <Text style={{fontSize:50,}}>+</Text>
+                   <Text style={{fontSize:50,marginBottom:10,marginRight:30}}>+</Text>
                    </TouchableOpacity> 
                  </View>
                   </View>
-
-
               </View>
               
 
              
-              
+          
         </View>
     )
 }
